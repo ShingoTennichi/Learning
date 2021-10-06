@@ -101,8 +101,65 @@
 
 
 // * loop;
-// * for loop;
-let ex_list = ["element1", "element2", "element3", "element4", "element5", "element6", "element7", "element8", "element9", "element10"];
-for (let i = 0; i < ex_list.length; i++) {
-    console.log(ex_list[i]);
-}
+// * .length --> the same as len(), but doesn't need "()."; It starts with 1.;
+// * for loop; for (excuted one time; condition; every time;) {;}
+// ! let ex_list = ["element1", "element2", "element3", "element4", "element5"];
+// ! for (let i = 0; i < ex_list.length; i+=1) {
+// !     console.log(ex_list[i]);
+// ! }
+// * for in
+// ! let ex_map = {"first_name": "Shingo", "last_name": "Tennichi", "age":26}
+// ! for (let keys in ex_map) {
+// !     console.log(keys);
+// !     console.log(ex_map[keys]);
+// ! }
+// * for of --> similar to for loop in python
+// ! let ex_list = ["element1", "element2", "element3", "element4", "element5"];
+// ! for (let val of ex_list) {
+// !     console.log(val);
+// ! }
+
+
+// * while loop
+// ! let i = 0
+// ! while (i < 10) {
+// !     console.log(i);
+// !     i += 1;
+// ! }
+
+
+// * switch
+// * case --> only value
+// ! switch (num1) {
+// !     case 1:
+// !         console.log("num1 is 1.");
+// !         break;
+// !     case 2:
+// !         console.log("num1 is 2.");
+// !         break;
+// !     case 3:
+// !         console.log("num1 is 3.");
+// !         break;
+// !     case 4:
+// !         console.log("num1 is 4.");
+// !         break;
+// !     case 5:
+// !         console.log("num1 is 5.");
+// !         break;
+// !     default:
+// !         console.log("num1 is not fitted.");
+// !         break;
+// ! }
+
+
+// * if, else if, else;
+// ! let num1 = 4;
+// ! let num2 = 10;
+// ! console.log(num1,num2);
+// ! if (num1 > num2) {
+// !     console.log(true);
+// ! } else if (num1 == 5) {
+// !     console.log("It's five.");
+// ! } else {
+// !     console.log(false);
+// ! }
