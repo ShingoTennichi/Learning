@@ -25,13 +25,13 @@ class Binary_Search_Tree {
             if(node.left === null) {
                 node.left = new_Node;
             } else {
-                this.insert_Node(node,new_Node);
+                this.insert_Node(node.left,new_Node);
             }
         } else {
             if (node.right === null) {
                 node.right = new_Node;
             } else {
-                this.insert_Node(node,new_Node)
+                this.insert_Node(node.right,new_Node)
             }
         }
     }
@@ -69,3 +69,12 @@ class Binary_Search_Tree {
         }
     }
 }
+
+
+// * This is how to use the functions.
+// let numbers = [7,5,8,3,4,1,9,2,6,10];
+// let node_tree = new Binary_Search_Tree()
+// for (const number of numbers) {
+//     node_tree.insert(number);
+// }
+// console.dir(node_tree,{depth: null});
