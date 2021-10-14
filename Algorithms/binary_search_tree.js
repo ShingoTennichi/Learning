@@ -68,13 +68,81 @@ class Binary_Search_Tree {
             this.in_order(node.right);
         }
     }
+    pre_order(node) {
+        if(node !== null) {
+            console.log(node.data);
+            this.pre_order(node.left);
+            this.pre_order(node.right);
+        }
+    }
+    post_order(node) {
+        if(node !== null) {
+            this.post_order(node.left);
+            this.post_order(node.right);
+            console.log(node.data);
+        }
+    }
+    find_Min_Node(node) {
+        if(node.left === null) {
+            return node.data;
+        } else {
+            this.find_Min_Node(node.left);
+        }
+    }
+    get_root_node() {
+        return this.root;
+    }
+    search(node,data) {
+        if(node === null) {
+            return null;
+        } else if(data < node.data) {
+            return this.get_root_node(node.left,data);
+        } else if(data > data) {
+            return this.get_root_node(node.right,data);
+        } else {
+            return node;
+        }
+
+    }
 }
 
 
-// * This is how to use the functions.
+// * This is how to use the insert functions.
 // let numbers = [7,5,8,3,4,1,9,2,6,10];
 // let node_tree = new Binary_Search_Tree()
 // for (const number of numbers) {
 //     node_tree.insert(number);
 // }
 // console.dir(node_tree,{depth: null});
+
+// * This is how to use the in_order functions.
+// let numbers = [7,5,8,3,4,1,9,2,6,10];
+// let node_tree = new Binary_Search_Tree();
+// for (const number of numbers) {
+//     node_tree.insert(number);
+// }
+// console.dir(node_tree.in_order(node_tree.root));
+
+// * This is how to use the pre_order functions.
+// let numbers = [7,5,8,3,4,1,9,2,6,10];
+// let node_tree = new Binary_Search_Tree();
+// for (const number of numbers) {
+//     node_tree.insert(number);
+// }
+// console.dir(node_tree.pre_order(node_tree.root));
+
+// * This is how to use the post_order functions.
+// let numbers = [7,5,8,3,4,1,9,2,6,10,0.5,7.5,8.5];
+// let node_tree = new Binary_Search_Tree();
+// for (const number of numbers) {
+//     node_tree.insert(number);
+// }
+// console.dir(node_tree.post_order(node_tree.root));
+
+// * This is how to use the post_order functions.
+// let numbers = [7,5,8,3,4,1,9,2,6,10,0.5,7.5,8.5];
+// let node_tree = new Binary_Search_Tree();
+// for (const number of numbers) {
+//     node_tree.insert(number);
+// }
+// console.dir(node_tree.search(node_tree.root,11),{depth:null});
