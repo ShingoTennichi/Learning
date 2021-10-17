@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alarm_crock</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="alarm_crock.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="Navbar-container">
+            <div class="items-center" style="padding: 20px; color: var(--clr-black);">
+                <h1>Alarm Clock</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="background-image">
+            <div class="container-Lv1">
+                <div class="container-Lv2">
+                    <h1>Current Time</h1>
+                    <div class="items-center" style="margin: 20px;">
+                        <h1 id="time" name="clock">00:00:00</h1>
+                    </div>
+                    <section>
+                        <div class="items-evenly" name="alarm_crock">
+                            <select id="set_hours"></select>
+                            <select id="set_minuets"></select>
+                            <select id="set_seconds"></select>
+                        </div>
+                        <div class="items-center" style="margin: 20px;">
+                            <button id="set">
+                                Set timer
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <!-- JavaScript -->
+    <script src="alarm_crock.js"></script>
+</body>
+</html>
+
+
+
+
+

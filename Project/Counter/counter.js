@@ -1,3 +1,4 @@
+// * ================================================================================
 let count = 0;
 
 const value = document.querySelector('#value');
@@ -24,7 +25,7 @@ btns.forEach(function(btn) {
     });
 });
 
-
+// * ================================================================================
 let count2 = 0;
 const number = document.querySelector('#number');
 const buttons = document.querySelectorAll('.btn2');
