@@ -31,9 +31,12 @@
 let hours, minuets, seconds
 const sec = 1000;
 const show_clock = document.getElementById("time");
-const set_hours = document.getElementById("set_hours")
-const set_minuets = document.getElementById("set_minuets")
-const set_seconds = document.getElementById("set_seconds")
+const message = document.getElementById("message");
+const set_hours = document.getElementById("set_hours");
+const set_minuets = document.getElementById("set_minuets");
+const set_seconds = document.getElementById("set_seconds");
+const alarm_set = document.getElementById("set");
+const alarm_sound = new Audio("images/BGM1.m4a");
 // !==============================================================
 
 let clock = setInterval(() => {
@@ -62,7 +65,7 @@ let clock = setInterval(() => {
     }
 
     // * add current time as text to id="time"
-    show_clock.textContent = hours + ":" + minuets + ":" + seconds
+    show_clock.textContent = hours + ":" + minuets + ":" + seconds;
 
     // *sec is 1sec --> const sec = 1000;
 }, sec);
@@ -92,31 +95,17 @@ let alarm_minuets = () => {
 
 alarm_minuets();
 
-
-let alarm_seconds = () => {
-    for(let i=0; i < 60; i+=1) {
-        if(i < 10) {
-            set_seconds.options[set_seconds.options.length] = new Option("0"+i,"0"+i);
-        } else {
-            set_seconds.options[set_seconds.options.length] = new Option(i,i);
-        };
-    };
+let alarm = () => {
+    alarm_set.addEventListener('click', () => {
+        message.textContent = 'You set timer at ' + set_hours.options[set_hours.selectedIndex].value + ":" + set_minuets.options[set_minuets.selectedIndex].value + ".";
+        setInterval(() => {
+            const current_time = new Date();
+            if(current_time.getHours() == set_hours.options[set_hours.selectedIndex].value && current_time.getMinutes() == set_minuets.options[set_minuets.selectedIndex].value) {
+                alarm_sound.play();
+            }
+        },sec);
+    });
 };
 
-alarm_seconds();
+alarm();
 
-
-// let tes = {"a":"a","b":"b"};
-// $(()=> {
-//     $(tes).option =  new Option();
-// })
-// function SetTimer() {
-//     let time;
-//     let alarm = prompt("Please enter the time you want to wake up. :", "00:00");
-//     if (alarm == null || alarm == "") {
-//         text = "User cancelled the prompt.";
-//     } else {
-//         text = "Hello " + alarm + "! How are you today?";
-//     }
-//     document.getElementById("demo").innerHTML = time;
-// }
